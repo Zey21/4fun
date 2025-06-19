@@ -1,0 +1,166 @@
+<html class="scroll-smooth" lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Buku Cerita Dukungan untuk Jelita
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Baloo 2', cursive;
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-b from-blue-50 to-white min-h-screen flex flex-col items-center justify-center p-4">
+  <main class="max-w-md w-full bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col">
+   <header class="bg-blue-200 p-6 flex items-center justify-center">
+    <img alt="Ilustrasi beruang putih lucu dengan ekspresi ceria, duduk sambil melambaikan tangan" class="w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/dcb95d54-2180-496f-c3ac-7a33512ecbc8.jpg" width="80"/>
+    <h1 class="text-3xl font-bold text-blue-900 ml-4 select-none">
+     Buku Cerita Dukungan untuk Jelita
+    </h1>
+   </header>
+   <section class="flex-1 p-6 text-center" id="story-container">
+    <img alt="Beruang putih lucu sedang belajar dengan buku dan laptop di meja kayu, latar belakang ruang belajar cerah" class="mx-auto rounded-xl shadow-md mb-6 max-w-full h-auto" height="200" id="story-image" src="https://storage.googleapis.com/a1aa/image/17774fa2-84e8-4564-fa14-d19ebcbf05b4.jpg" width="300"/>
+    <p class="text-lg text-gray-800 leading-relaxed select-text" id="story-text">
+     Halo Jelita! Aku beruang putih lucu yang ingin menemanimu melewati sidang kelulusan Teknik Industri Pertanian. Kamu pasti bisa!
+    </p>
+   </section>
+   <nav class="bg-blue-100 p-4 flex justify-between items-center">
+    <button aria-label="Halaman sebelumnya" class="bg-blue-400 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center" id="prev-btn">
+     <i class="fas fa-arrow-left mr-2">
+     </i>
+     Sebelumnya
+    </button>
+    <span class="text-blue-900 font-semibold select-none" id="page-indicator">
+     1 / 7
+    </span>
+    <button aria-label="Halaman berikutnya" class="bg-blue-400 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg flex items-center" id="next-btn">
+     Berikutnya
+     <i class="fas fa-arrow-right ml-2">
+     </i>
+    </button>
+   </nav>
+  </main>
+  <script>
+   const pages = [
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+sedang+belajar&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu sedang belajar dengan buku dan laptop di meja kayu, latar belakang ruang belajar cerah",
+        text:
+          "Halo Jelita! Aku beruang putih lucu yang ingin menemanimu melewati sidang kelulusan Teknik Industri Pertanian. Kamu pasti bisa!",
+      },
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+memegang+buku&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu memegang buku besar berwarna biru dengan ekspresi semangat, latar belakang perpustakaan penuh rak buku",
+        text:
+          "Ingat, setiap halaman yang kamu baca dan setiap tugas yang kamu kerjakan adalah langkah menuju kesuksesanmu. Terus semangat ya!",
+      },
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+berjalan+di+hutan&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu berjalan di hutan bersalju dengan ekspresi penuh harapan, pepohonan putih dan langit biru cerah",
+        text:
+          "Kadang perjalanan terasa berat, tapi jangan lupa untuk beristirahat dan menikmati keindahan di sekitarmu. Kamu tidak sendiri.",
+      },
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+berpelukan&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu memeluk boneka beruang kecil dengan ekspresi hangat dan penuh kasih sayang, latar belakang kamar tidur nyaman",
+        text:
+          "Aku selalu ada untukmu, memberikan pelukan hangat dan dukungan tanpa henti. Kamu kuat dan mampu melewati semua ini.",
+      },
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+berdiri+di+puncak+gunung&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu berdiri di puncak gunung dengan tangan terangkat, latar belakang matahari terbit dan langit oranye keemasan",
+        text:
+          "Bayangkan betapa bangganya kamu nanti saat berhasil melewati sidang ini. Puncak kesuksesan sudah di depan mata!",
+      },
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+tersenyum+dengan+bintang&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu tersenyum sambil memegang bintang kecil berkilauan, latar belakang langit malam penuh bintang",
+        text:
+          "Setiap bintang di langit adalah harapan dan doa yang mendukungmu. Jangan pernah ragu, kamu adalah bintang yang bersinar.",
+      },
+      {
+        image:
+          "https://placehold.co/300x200/png?text=Beruang+putih+melompat+bahagia&font=Baloo+2&fontSize=24",
+        alt: "Beruang putih lucu melompat dengan ekspresi bahagia dan penuh semangat, latar belakang padang salju cerah dengan sinar matahari",
+        text:
+          "Selamat sidang, Jelita! Aku yakin kamu akan sukses besar. Teruslah melangkah dengan percaya diri dan hati yang penuh semangat!",
+      },
+    ];
+
+    let currentPage = 0;
+
+    const storyImage = document.getElementById("story-image");
+    const storyText = document.getElementById("story-text");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const pageIndicator = document.getElementById("page-indicator");
+
+    function updatePage() {
+      const page = pages[currentPage];
+      storyImage.src = page.image;
+      storyImage.alt = page.alt;
+      storyText.textContent = page.text;
+      pageIndicator.textContent = `${currentPage + 1} / ${pages.length}`;
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = currentPage === pages.length - 1;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 0) {
+        currentPage--;
+        updatePage();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        updatePage();
+      }
+    });
+
+    // Enable swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleGesture() {
+      if (touchEndX < touchStartX - 40) {
+        // swipe left
+        if (currentPage < pages.length - 1) {
+          currentPage++;
+          updatePage();
+        }
+      }
+      if (touchEndX > touchStartX + 40) {
+        // swipe right
+        if (currentPage > 0) {
+          currentPage--;
+          updatePage();
+        }
+      }
+    }
+
+    document.getElementById("story-container").addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.getElementById("story-container").addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleGesture();
+    });
+
+    updatePage();
+  </script>
+ </body>
+</html>
